@@ -3,7 +3,7 @@
     <img 
       src="{{ 'wardrobe.jpg' | asset_url }}" 
       alt="Wardrobe"
-      width="2973" 
+      width="2973"
       height="4460"
     >
     <div class="headline-text">
@@ -24,11 +24,10 @@
   }
 
   .headline img {
-    justify-content:"center";
-    align-items: "center";
     width: 100%;
     height: 100%;
     display: block;
+    max-width: none;
   }
 
   .headline-text {
@@ -48,14 +47,13 @@
     margin-top: 2%;
   }
   .design-button button {
-    padding: 0.6em 1em;
+    padding: 1em 4em;
     width: auto;
     color: white;
-    font-size: 40px;
+    font-size: 18px;
     background: rgb(181,83,10);
     border: none;
     cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
   }
 {% endstyle %}
 
