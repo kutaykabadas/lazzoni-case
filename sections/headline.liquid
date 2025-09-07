@@ -1,0 +1,80 @@
+<section>
+  <div class="headline">
+    <img 
+      src="{{ 'wardrobe.jpg' | asset_url }}" 
+      alt="Wardrobe"
+      width="2973" 
+      height="4460"
+    >
+    <div class="headline-text">
+      {{ section.settings.heading }}
+    </div>
+  </div>
+  <div class="design-button">
+    <button type="submit" >Start Designing With Us</button>
+  </div>
+</section>
+
+{% style %}
+  .headline {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+  }
+
+  .headline img {
+    justify-content:"center";
+    align-items: "center";
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .headline-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  }
+  .design-button {
+    text-align: center;
+    margin-top: 2%;
+  }
+  .design-button button {
+    padding: 0.6em 1em;
+    width: auto;
+    color: white;
+    font-size: 40px;
+    background: rgb(181,83,10);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Headline",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Custom Closets"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Headline",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,33 @@
+<footer>
+  <div class="footer__copyright">
+    &copy;
+    {{ 'now' | date: '%Y' }}
+    {{ shop.name | link_to: routes.root_url }}, {{ powered_by_link }}
+  </div>
+</footer>
+
+{% stylesheet %}
+  footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+  footer a {
+    text-decoration: none;
+    color: var(--color-foreground);
+  }
+
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:general.footer",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "t:labels.menu"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,55 @@
+{% assign closets = collections.all.products | where: "vendor", "Lazzoni-case" %}
+
+<div class="closets-wrapper">
+  {% for closet in closets %}
+    <div class="closet">
+      <h2>{{ closet.title }}</h2>
+      <p>{{ closet.description }}</p>
+
+      {% if closet.images.size > 0 %}
+        <div class="images">
+          {% for img in closet.images %}
+            <img src="{{ img.src | img_url: 'medium' }}" alt="{{ closet.title }}"  width="4444", height="4444">
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+
+{% style %}
+  .closets-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-left: 60px;
+    gap: 60px;
+  }
+
+  .closet {
+    text-align: left;
+  }
+
+  .closet h2 {
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 30px;
+  }
+
+  .closet p {
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+
+  .images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    
+  }
+
+  .images img {
+    max-width: 300px;
+    height: auto;
+  }
+{% endstyle %}
