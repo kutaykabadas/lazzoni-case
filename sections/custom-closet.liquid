@@ -1,4 +1,4 @@
-{% assign closets = collections.all.products | where: "vendor", "Lazzoni-case" %}
+{% assign closets = collections.closets.products | where: "vendor", "Lazzoni-case" %}
 
 <div class="closets-wrapper">
   {% for closet in closets %}
@@ -27,18 +27,16 @@
   }
 
   .closet {
-    text-align: left;
+    text-align: left;,
   }
 
   .closet h2 {
     margin-bottom: 10px;
-    font-weight: 500;
     font-size: 30px;
   }
 
   .closet p {
     margin-bottom: 20px;
-    font-weight: 600;
   }
 
   .images {
